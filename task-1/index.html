@@ -12,10 +12,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div id="app"></div>
 
-
     <script type="text/babel">
+        const Film = ({name, year, url}) => {
+            return (
+                <a href="#">
+                    <div className="card">
+                        <div className="wrapper">
+                            <img src={url}
+                                 className="cover-image" alt={name}/>
+                        </div>
+                        <div className="title">{name}</div>
+                        <div className="title">{year}</div>
+                    </div>
+                </a>
+            );
+        };
+
+        const addFilms = (
+            <>
+                <Film name={"Великий Гэтсби"} year="2013" url="https://envybox.io/blog/wp-content/uploads/2017/06/pasted-image-0-1.png" />
+                <Film name={"Дюна"} year="2021" url="https://upload.wikimedia.org/wikipedia/ru/thumb/6/61/%D0%94%D1%8E%D0%BD%D0%B0_%E2%80%94_%D0%A7%D0%B0%D1%81%D1%82%D1%8C_%D0%B2%D1%82%D0%BE%D1%80%D0%B0%D1%8F_%28%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%29.jpg/640px-%D0%94%D1%8E%D0%BD%D0%B0_%E2%80%94_%D0%A7%D0%B0%D1%81%D1%82%D1%8C_%D0%B2%D1%82%D0%BE%D1%80%D0%B0%D1%8F_%28%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%29.jpg" />
+                <Film name={"Остров Проклятых"} year="2010" url="https://wl-adme.cf.tsp.li/resize/728x/jpg/848/47e/93355959fa8ec62751aaccefe7.jpg" />
+            </>
+        );
+
+        ReactDOM.render(addFilms, document.getElementById('app'));
+
 
     </script>
 </body>
